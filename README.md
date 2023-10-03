@@ -2,7 +2,7 @@
 
 ### <div align=center> In this repository, Selenium WebDriver and TestNG framework are used to automate the Orange HRM website. Here I have covered folowing tasks as login, logout, create new user, search user & update user. A Allure report has been created based on test results & all test cases were written manually during testing.
 
-## Tools & Technology used:
+### Tools & Technology used:
 - Selenium Webdriver
 - TestNG Framework
 - Java
@@ -11,7 +11,7 @@
 - Allure
 
 
-## Prerequisites
+### Prerequisites
 - jdk
 - gradle
 
