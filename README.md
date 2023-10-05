@@ -21,7 +21,7 @@
 - Open ```terminal```
 - Give this following command for smoke test: ```gradle clean test -Pfilesuite="SmokeMasterSuite.xml"```
 - Give this following command for regression test: ```gradle clean test -Pfilesuite="RegressionMasterSuite.xml"```  
-- For generating Allure Report use these commands: ```allure generate allure-results --clean -o allure-report``` & ```allure serve allure-results```
+- For generating Allure Report use these commands: ```allure generate allure-results --clean -output``` & ```allure serve allure-results```
 
 ### Test Cases:
 https://docs.google.com/spreadsheets/d/1tAeQgy25Tx5ztQi944unSPEnzpbkS51y/edit?usp=sharing&ouid=117120284960221469947&rtpof=true&sd=true
