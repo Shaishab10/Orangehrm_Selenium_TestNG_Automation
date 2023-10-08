@@ -67,7 +67,7 @@ public class DashboardTestRunner extends Setup {
         String firstName = faker.name().firstName();
         String lastName = faker.name().lastName();
         String employeeId = String.valueOf(faker.random().nextInt(6000,7000));
-        String password = faker.internet().password(8,12,true,true,true);
+        String password = "u"+faker.internet().password(8,12,true,true,true);
 
         EmployeeModel model = new EmployeeModel();
         model.setFirstname(firstName);
@@ -95,7 +95,7 @@ public class DashboardTestRunner extends Setup {
         String lastName = faker.name().lastName();
         String employeeId = String.valueOf(faker.random().nextInt(6000,7000));
         String username = "qwe";
-        String password = faker.internet().password(8,12,true,true,true);
+        String password = "u"+faker.internet().password(8,12,true,true,true);
 
         EmployeeModel model = new EmployeeModel();
         model.setFirstname(firstName);
@@ -149,7 +149,7 @@ public class DashboardTestRunner extends Setup {
         String lastName = faker.name().lastName();
         String employeeId = String.valueOf(faker.random().nextInt(6000,7000));
         String username = faker.name().username();
-        String password = faker.internet().password(8,12,true,true,true);
+        String password = "u"+faker.internet().password(8,12,true,true,true);
 
         EmployeeModel model = new EmployeeModel();
         model.setFirstname(firstName);
@@ -209,6 +209,10 @@ public class DashboardTestRunner extends Setup {
         String firstName = empObj.get("firstName").toString();
         dashboardPage.searchByEmployeeName(firstName);
         Thread.sleep(1500);
+        String messageActual = driver.findElement(By.className("orangehrm-directory-card-header")).getText();
+        Thread.sleep(1500);
+        System.out.println(messageActual);
+        Assert.assertTrue(messageActual.contains(firstName));
 
         Allure.description("Admin Successfully Search User by Employee Name");
     }

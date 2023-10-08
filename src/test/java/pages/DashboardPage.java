@@ -29,7 +29,10 @@ public class DashboardPage {
     @FindBy(xpath = "//input[@placeholder='Type for hints...']")
     WebElement search;
 
+    WebDriver driver;
+
     public DashboardPage(WebDriver driver){
+        this.driver =driver;
         PageFactory.initElements(driver,this);
     }
 
@@ -82,12 +85,14 @@ public class DashboardPage {
         submit.click(); //click search
     }
 
-    public void searchByEmployeeName(String firstname){
+    public void searchByEmployeeName(String firstname) throws InterruptedException {
         menuItems.get(8).click();
-        search.click();
-        search.sendKeys(firstname);
-        search.sendKeys(Keys.ARROW_DOWN);
-        search.sendKeys(Keys.ENTER);
+        Actions action = new Actions(driver);
+        action.click(search);
+        action.sendKeys(firstname).perform();
+        Thread.sleep(5000);
+        action.sendKeys(Keys.ARROW_DOWN).perform();
+        action.sendKeys(Keys.ENTER).perform();
         submit.click();
     }
 }
